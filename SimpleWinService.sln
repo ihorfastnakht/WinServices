@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWS.Shared", "SWS.Shared\SWS.Shared.csproj", "{0E492386-72F0-4B46-ACA3-60746BB6F3BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWS.UsbServiceListener", "SWS.UsbServiceListener\SWS.UsbServiceListener.csproj", "{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E492386-72F0-4B46-ACA3-60746BB6F3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E492386-72F0-4B46-ACA3-60746BB6F3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E492386-72F0-4B46-ACA3-60746BB6F3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E492386-72F0-4B46-ACA3-60746BB6F3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8647A48-F4A2-4DBE-A852-6457F71C1565}
+	EndGlobalSection
+EndGlobal
