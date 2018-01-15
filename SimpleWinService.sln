@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWS.Shared", "SWS.Shared\SW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWS.UsbServiceListener", "SWS.UsbServiceListener\SWS.UsbServiceListener.csproj", "{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{0BAF3110-7BCE-42A5-9DC4-A0BE10C484E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03DBEDB0-5AB1-4DF5-ABB1-616437A59D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAF3110-7BCE-42A5-9DC4-A0BE10C484E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAF3110-7BCE-42A5-9DC4-A0BE10C484E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAF3110-7BCE-42A5-9DC4-A0BE10C484E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAF3110-7BCE-42A5-9DC4-A0BE10C484E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

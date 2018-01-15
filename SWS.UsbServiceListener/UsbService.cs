@@ -1,27 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
 
 using LibUsbDotNet.DeviceNotify;
 
 namespace SWS.UsbServiceListener
 {
+    using SWS.Shared.Services;
     using SWS.Shared.Models;
-    using SWS.Shared.Services.Interfaces;
-    using SWS.Shared.Services.Implementation;
-    using System.Threading;
+    using SWS.Shared.DataAccess;
 
     public partial class UsbService : ServiceBase
     {
         #region Private members
 
-        private readonly IDeviceManager deviceManager;
+        private readonly IDeviceManager deviceManager = new DeviceManager();
         public IDeviceNotifier usbDeviceNotifier;
 
         #endregion
@@ -32,13 +26,16 @@ namespace SWS.UsbServiceListener
         {
             usbDeviceNotifier = DeviceNotifier.OpenDeviceNotifier();
             usbDeviceNotifier.OnDeviceNotify += OnDeviceNotify;
+
+            while(true)
+                Application.DoEvents();
         }
 
         private async void OnDeviceNotify(object sender, DeviceNotifyEventArgs e)
         {
             if (e.EventType == EventType.DeviceArrival)
             {
-                var deviceInfo = new DeviceInfo(Guid.NewGuid(), e.Device.IdVendor, e.Device.IdProduct, e.Device.Name);
+                var deviceInfo = new DeviceInfo(Guid.NewGuid(), e.Device.IdVendor, e.Device.IdProduct, e.Device.SymbolicName.FullName);
 
                 var isRegistered = await deviceManager.CheckDeviceRegistrationAsync(deviceInfo);
                 if (!isRegistered)
@@ -67,7 +64,7 @@ namespace SWS.UsbServiceListener
         public UsbService()
         {
             InitializeComponent();
-            deviceManager = new DeviceManager();
+            this.AutoLog = true;
         }
 
         protected override void OnStart(string[] args)

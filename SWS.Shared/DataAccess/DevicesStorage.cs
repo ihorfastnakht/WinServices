@@ -5,16 +5,15 @@ using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace SWS.Shared.DataAccess.Implementation
+namespace SWS.Shared.DataAccess
 {
     using Models;
 
-
-    public class DevicesStorage : Abstract.BaseStorageOfT<DeviceInfo>
+    public class DevicesStorage : BaseStorageOfT<DeviceInfo>
     {
         #region Consts
 
-        private const string Db = @"C:\service\FakeDb.txt";
+        private static string Db = Path.Combine(Environment.CurrentDirectory, @"TestDb.txt");
 
         #endregion
 
@@ -31,7 +30,6 @@ namespace SWS.Shared.DataAccess.Implementation
                     {
                         var parameters = line.Split(';');
 
-                        //TODO: move to helper methods
                         var id = Guid.TryParse(parameters[0], out Guid guid) == true ? guid : Guid.NewGuid();
                         var vendorId = int.TryParse(parameters[1], out int tmpvId) == true ? tmpvId : 0;
                         var productId = int.TryParse(parameters[2], out int tmppId) == true ? tmppId : 0;
@@ -86,6 +84,12 @@ namespace SWS.Shared.DataAccess.Implementation
 
         public static async Task<IEnumerable<string>> ReadFromFileAsync()
         {
+            if (!File.Exists(Db))
+            {
+                //Just return empty list
+                return new List<string>();
+            }
+
             StreamReader file = new StreamReader(Db);
 
             var lines = new List<string>();

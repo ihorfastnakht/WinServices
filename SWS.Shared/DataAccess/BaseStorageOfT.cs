@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SWS.Shared.DataAccess.Abstract
+namespace SWS.Shared.DataAccess
 {
     public abstract class BaseStorageOfT<T>
     {

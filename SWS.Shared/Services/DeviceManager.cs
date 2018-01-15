@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
-namespace SWS.Shared.Services.Implementation
+    
+namespace SWS.Shared.Services
 {
     using Models;
-    using Interfaces;
-    using DataAccess.Implementation;
-    using System.Linq;
+    using DataAccess;
 
     public class DeviceManager : IDeviceManager
     {

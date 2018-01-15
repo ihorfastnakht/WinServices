@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SWS.Shared.Services.Interfaces
+namespace SWS.Shared.Services
 {
     using Models;
 
